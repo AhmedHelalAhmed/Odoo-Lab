@@ -20,18 +20,32 @@
             <field name="model">mylab.machine</field>
             <field name="arch" type="xml">
                 <form>
-                    <group>
+                    <sheet>
                         <group>
+                            <group>
 
+                            </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="price"/>
+                                <field name="description"/>
+                                <field name="create_date" string="Created date"/>
+                                <field name="create_uid"/>
+                            </group>
                         </group>
-                        <group>
-                            <field name="name"/>
-                            <field name="price"/>
-                            <field name="description"/>
-                            <field name="create_date" string="Created date" />
-                            <field name="create_uid"/>
-                        </group>
-                    </group>
+                        <notebook>
+                            <page string="history">
+
+
+                                <field name="create_date" string="date"/>
+                                <field name="create_uid" string="by"/>
+                                <field name="description" string="description"/>
+
+
+                            </page>
+
+                        </notebook>
+                    </sheet>
 
 
                 </form>
