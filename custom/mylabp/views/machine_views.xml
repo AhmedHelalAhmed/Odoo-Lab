@@ -23,7 +23,7 @@
                     <sheet>
                         <group>
                             <group>
-
+                                <field name="image" widget="image" string="machine photo"/>
                             </group>
                             <group>
                                 <field name="name"/>

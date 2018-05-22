@@ -5,4 +5,6 @@ class Machine(models.Model):
     name = fields.Char()
     description = fields.Text()
     price = fields.Float()
+    image = fields.Binary()
+
  
