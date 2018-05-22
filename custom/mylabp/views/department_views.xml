@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="mylab_department_action" model="ir.actions.act_window">
+            <field name="name">Departments</field>
+            <field name="res_model">mylab.department</field>
+            <field name="view_type">form</field>
+            <field name="view_model">tree,form</field>
+        </record>
+
+
+        <record id="mylab_department_action" model="ir.actions.act_window">
+            <field name="num_of_machines"></field>
+        </record>
+
+        <menuitem id="mylab_root" name="Mylab"/>
+        <menuitem id="mylab_data" name="Data" parent="mylab_root"/>
+        <menuitem id="mylab_department" name="Department" parent="mylab_data" action="mylab_department_action" sequence="2"/>
+    </data>
+</odoo>
