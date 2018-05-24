@@ -1,7 +1,7 @@
 <odoo>
     <data>
         <record id="mylab_machine_tree" model="ir.ui.view">
-            <field name="name">my lab machine view</field>
+            <field name="name">mylab machine view</field>
             <field name="model">mylab.machine</field>
             <field name="arch" type="xml">
                 <tree>
@@ -16,7 +16,7 @@
         </record>
 
         <record id="mylab_machine_form" model="ir.ui.view">
-            <field name="name">my lab machine form</field>
+            <field name="name">mylab machine form</field>
             <field name="model">mylab.machine</field>
             <field name="arch" type="xml">
                 <form>
@@ -40,13 +40,13 @@
                         </group>
                         <notebook>
                             <page string="history">
-
-
-                                <field name="create_date" string="date"/>
-                                <field name="create_uid" string="by"/>
-                                <field name="description" string="description"/>
-
-
+                                <field name="histories_ids">
+                                    <tree editable="top">
+                                        <field name="date"/>
+                                        <field name="user_id"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
                             </page>
 
                         </notebook>
@@ -59,8 +59,6 @@
         </record>
         <record id="mylab_machine_action" model="ir.actions.act_window">
             <field name="name">Machines</field>
-            <field name="create_date"></field>
-            <field name="create_uid"></field>
             <field name="res_model">mylab.machine</field>
             <field name="view_type">form</field>
             <field name="view_model">tree,form</field>

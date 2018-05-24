@@ -8,10 +8,17 @@
         </record>
 
 
-        <record id="mylab_department_action" model="ir.actions.act_window">
-            <field name="num_of_machines"></field>
-        </record>
+        <record id="mylab_department_tree" model="ir.ui.view">
+            <field name="name">mylab department view</field>
+            <field name="model">mylab.department</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="num_of_machines"/>
+                </tree>
+            </field>
 
+        </record>
         <menuitem id="mylab_root" name="Mylab"/>
         <menuitem id="mylab_data" name="Data" parent="mylab_root"/>
         <menuitem id="mylab_department" name="Department" parent="mylab_data" action="mylab_department_action" sequence="2"/>
