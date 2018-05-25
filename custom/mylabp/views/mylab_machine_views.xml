@@ -31,11 +31,14 @@
                             </group>
                             <group>
                                 <field name="name"/>
-                                <field name="price"/>
-                                <field name="description"/>
+                                <!-- tags-->
                                 <field name="department_id"/>
-                                <field name="create_date" string="Created date"/>
-                                <field name="create_uid"/>
+                                <field name="create_uid" attrs="{'readonly':[('create_uid','!=',False)]}"/>
+                                <field name="create_date" string="Created date"
+                                       attrs="{'readonly':[('create_date','!=',False)]}"/>
+                                <!--not required-->
+                                <!--<field name="price"/>-->
+                                <!--<field name="description"/>-->
                             </group>
                         </group>
                         <notebook>

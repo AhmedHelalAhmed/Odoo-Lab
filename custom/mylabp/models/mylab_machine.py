@@ -9,7 +9,7 @@ class MyLabMachine(models.Model):
     image = fields.Binary()
     is_accepted = fields.Boolean(string="Is Accepted")
     department_id = fields.Many2one('mylab.department', string="Department")
-    user_id = fields.Many2one('res.users', string='Approved By',readonly=True,  default=lambda self: self.env.uid)
+    user_id = fields.Many2one('res.users', string='Approved By',default=lambda self: self.env.uid)
     histories_ids = fields.One2many('mylab.history','machine_id', string='History')
 
 
