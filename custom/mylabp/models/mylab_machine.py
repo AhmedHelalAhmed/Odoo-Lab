@@ -11,5 +11,5 @@ class MyLabMachine(models.Model):
     department_id = fields.Many2one('mylab.department', string="Department")
     user_id = fields.Many2one('res.users', string='Approved By',default=lambda self: self.env.uid)
     histories_ids = fields.One2many('mylab.history','machine_id', string='History')
-
+    tags_ids = fields.Many2many('mylab.tag',string="tags")
 

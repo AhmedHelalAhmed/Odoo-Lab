@@ -23,19 +23,28 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="image" widget="image" string="machine photo"/>
-                                <field name="is_accepted" string="Approve"/>
-                                <field name="user_id" string="Approved By" attrs="{
-                                'invisible': [('is_accepted','=',False)],
-                                }"/>
+                                <!--span tag to prevent group from put the label by default-->
+                                <span>
+                                    <field name="image" widget='image'/>
+                                </span>
+
                             </group>
+
                             <group>
-                                <field name="name"/>
-                                <!-- tags-->
+                                <!--h1 to make the name larger-->
+                                <h1>
+                                    <field name="name"/>
+                                </h1>
+
+                                <field name="tags_ids" widget="many2many_tags" string="Tags"/>
                                 <field name="department_id"/>
                                 <field name="create_uid" attrs="{'readonly':[('create_uid','!=',False)]}"/>
                                 <field name="create_date" string="Created date"
                                        attrs="{'readonly':[('create_date','!=',False)]}"/>
+                                <field name="is_accepted" string="Approve"/>
+                                <field name="user_id" string="Approved By" attrs="{
+                                'invisible': [('is_accepted','=',False)],
+                                }"/>
                                 <!--not required-->
                                 <!--<field name="price"/>-->
                                 <!--<field name="description"/>-->
