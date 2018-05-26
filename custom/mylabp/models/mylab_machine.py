@@ -32,3 +32,11 @@ class MyLabMachine(models.Model):
     def refuse(self):
         for record in self:
             record.state = "refuse"
+
+    # For increase the number of machine in department model
+    @api.model
+    def create(self, vals):
+        new_machine_object = super(MyLabMachine, self).create(vals)
+        # To make the number of machine in department models dynamic
+        new_machine_object.department_id.num_of_machines = new_machine_object.department_id.num_of_machines + 1
+        return new_machine_object
