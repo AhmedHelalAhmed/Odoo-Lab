@@ -35,10 +35,7 @@
                     <sheet>
                         <group>
                             <group>
-                                <!--span tag to prevent group from put the label by default-->
-                                <span>
-                                    <field name="image" widget='image'/>
-                                </span>
+                                    <field name="image" widget='image' nolabel="1"/>
 
                             </group>
 
