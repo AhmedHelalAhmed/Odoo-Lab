@@ -47,3 +47,25 @@ class MyLabMachine(models.Model):
         for record in self:
             record.department_id.num_of_machines = record.department_id.num_of_machines - 1
         super(MyLabMachine, self).unlink()
+
+    # For edit if the machine's department change
+    @api.multi
+    def write(self, vals):
+        flag_change_department=False
+        for record in self:
+            #if the department modified
+            if record.department_id != vals.get('department_id'):
+                flag_change_department=True
+                #decrease the old department
+                record.department_id.num_of_machines = record.department_id.num_of_machines - 1
+        super(MyLabMachine, self).write(vals)
+        # the condition do not matter !!! without the codition the increase works will and not increase again
+        # increase the new department
+        if flag_change_department:
+            for record in self:
+                record.department_id.num_of_machines = record.department_id.num_of_machines + 1
+
+
+
+
+
