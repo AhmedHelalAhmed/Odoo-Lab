@@ -68,4 +68,3 @@ class MyLabMachine(models.Model):
 
 
 
-
