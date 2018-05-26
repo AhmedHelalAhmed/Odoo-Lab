@@ -33,10 +33,17 @@ class MyLabMachine(models.Model):
         for record in self:
             record.state = "refuse"
 
-    # For increase the number of machine in department model
+    # For increase the number of machine in department model if created
     @api.model
     def create(self, vals):
         new_machine_object = super(MyLabMachine, self).create(vals)
         # To make the number of machine in department models dynamic
         new_machine_object.department_id.num_of_machines = new_machine_object.department_id.num_of_machines + 1
         return new_machine_object
+
+    # For decrease the number of machine in department model if deleted
+    @api.multi
+    def unlink(self):
+        for record in self:
+            record.department_id.num_of_machines = record.department_id.num_of_machines - 1
+        super(MyLabMachine, self).unlink()
