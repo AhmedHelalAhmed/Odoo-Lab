@@ -20,6 +20,18 @@
             <field name="model">mylab.machine</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button name="draft" type="object" string="Set draft" attrs="{
+                                'invisible': [('state','=','draft')],
+                                }"/>
+                        <button name="approve" type="object" string="Approve" attrs="{
+                                'invisible': [('state','!=','draft')],
+                                }"/>
+                        <button name="refuse" type="object" string="Refuse" attrs="{
+                                'invisible': [('state','!=','draft')],
+                                }"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
                         <group>
                             <group>
