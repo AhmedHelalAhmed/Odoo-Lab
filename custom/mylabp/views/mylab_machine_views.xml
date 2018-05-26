@@ -53,10 +53,11 @@
                                 <field name="create_uid" attrs="{'readonly':[(True)]}"/>
                                 <field name="create_date" string="Created date"
                                        attrs="{'readonly':[(True)]}"/>
-                                <field name="is_accepted" string="Approve"/>
-                                <field name="user_id" string="Approved By" attrs="{
-                                'invisible': [('is_accepted','=',False)],
-                                }"/>
+                                <!--removed in lab 3-->
+                                <!--<field name="is_accepted" string="Approve"/>-->
+                                <!--<field name="user_id" string="Approved By" attrs="{-->
+                                <!--'invisible': [('is_accepted','=',False)],-->
+                                <!--}"/>-->
                                 <!--not required-->
                                 <!--<field name="price"/>-->
                                 <!--<field name="description"/>-->
